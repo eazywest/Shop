@@ -7,9 +7,9 @@ struct CustomButton: View {
     var body: some View {
         Button(action: action) {
             Text(text)
+                .font(.system(size: 16, weight: .bold))
                 .foregroundColor(.white)
                 .padding()
-                .fontWeight(.bold)
                 .frame(width: 358, height: 48)
                 .background(Color.black)
                 .cornerRadius(10)
@@ -19,7 +19,7 @@ struct CustomButton: View {
 
 struct CustomButton_Previews: PreviewProvider {
     static var previews: some View {
-        CustomButton(text: " Кнопка", action: {})
+        CustomButton(text: "Кнопка", action: {})
     }
 }
 

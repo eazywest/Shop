@@ -2,34 +2,43 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State private var emailText: String = ""
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
             HStack {
                 HStack {
-                    Image(systemName: "arrow.backward")
-                        .resizable()
-                        .frame(width: 24, height: 24)
-                    Spacer()
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "arrow.backward")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+                          
+                    }
                 }
-                .frame(width: 50) // Ширина для левой части
+                .padding(.leading, 10)
+                
                 
                 Spacer()
                 
                 Text("Забыли пароль?")
-                    .font(.system(size: 22))
-                    .fontWeight(.bold)
+                    .font(.system(size: 22, weight: .bold))
                 
                 Spacer()
                 
                 HStack {
                     Spacer()
                     Image(systemName: "arrow.backward")
-                        .hidden() // Невидимая для баланса
+                        .hidden()
                 }
-                .frame(width: 50) // Ширина для правой части
+                .frame(width: 50)
+                
             }
-            .padding()
+            .navigationBarBackButtonHidden(true)
+            .ignoresSafeArea()
+            .padding(.bottom, 40)
 
             VStack(spacing: 24) {
                 CustomTextField(placeholder: "Электронная почта", text: $emailText)
@@ -39,7 +48,7 @@ struct ForgotPasswordView: View {
             CustomButton(text: "Восстановить пароль", action: {
                 print("кнопка 'Восстановить пароль' нажата")
             })
-            .padding(.top, 30)
+            .padding(.top, 20)
 
             Spacer()
         }

@@ -5,78 +5,51 @@ struct RegistrationView: View {
     @State private var emailText: String = ""
     @State private var passwordText: String = ""
     @State private var confirmPasswordText: String = ""
-    @State private var isPasswordVisible: Bool = false
-    @State private var isConfirmPasswordVisible: Bool = false
+    @Environment(\.dismiss) var dismiss
 
     var body: some View {
         VStack {
-            HStack {
-                Spacer()
+            
+            HStack{
+                    Button {
+                        dismiss()
+                    } label: {
+                        Image(systemName: "arrow.backward")
+                            .resizable()
+                            .frame(width: 20, height: 20)
+                            .foregroundColor(.black)
+                      
+                          
+                    }
+                
                 Text("Регистрация")
-                    .font(.headline)
-                    .fontWeight(.bold)
-                Spacer()
+                    .font(.system(size: 22, weight: .bold))
+                    
+                
+                    
             }
-            .padding()
+            .padding(.trailing, 190)
+            .padding(.top,20)
 
             VStack(spacing: 24) {
                 CustomTextField(placeholder: "Имя Фамилия", text: $nameText)
                 CustomTextField(placeholder: "Электронная почта", text: $emailText)
-
-                HStack {
-                    if isPasswordVisible {
-                        TextField("Пароль", text: $passwordText)
-                            .frame(width: 310)
-                            .overlay(
-                                    RoundedRectangle(cornerRadius: 8)
-                                        .stroke(Color.gray, lineWidth: 1)
-                                )
-                    } else {
-                        SecureField("Пароль", text: $passwordText)
-                            .frame(width: 310)
-                    }
-                    Button {
-                        isPasswordVisible.toggle()
-                    } label: {
-                        Image(systemName: isPasswordVisible ? "eye" : "eye.slash")
-                    }
-                }
-                .padding()
-                .frame(width: 390, height: 60)
-                .background(Color.white.opacity(0.7))
-                .cornerRadius(10)
-
-                HStack {
-                    if isConfirmPasswordVisible {
-                        TextField("Подтвердите пароль", text: $confirmPasswordText)
-                            .frame(width: 310)
-                    } else {
-                        SecureField("Подтвердите пароль", text: $confirmPasswordText)
-                            .frame(width: 310)
-                    }
-                    Button {
-                        isConfirmPasswordVisible.toggle()
-                    } label: {
-                        Image(systemName: isConfirmPasswordVisible ? "eye" : "eye.slash")
-                    }
-                }
-                .padding()
-                .frame(width: 390, height: 60)
-                .background(Color.white.opacity(0.7))
-                .cornerRadius(10)
+                CustomTextField(placeholder: "Пароль", text: $passwordText, isSecure: true)
+                CustomTextField(placeholder: "Подтвердите пароль", text: $confirmPasswordText, isSecure: true)
             }
-            .padding(.top, 30)
+            .padding(.top, 15)
+            
 
             CustomButton(text: "Зарегистрироваться", action: {
                 print("Кнопка Зарегистрироваться нажата")
             })
-            .padding(.top, 30)
+            .padding(.top, 350)
 
             Spacer()
         }
         .padding()
         .background(Color.white.opacity(0.7))
-        
+        .navigationBarBackButtonHidden(true)
     }
 }
 
