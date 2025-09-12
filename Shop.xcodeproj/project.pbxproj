@@ -29,9 +29,22 @@
 		54251FAB2E671C60000EFB3A /* ShopUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShopUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		5478BEF82E740E9400DC8361 /* Exceptions for "Shop" folder in "Shop" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 54251F932E671C5E000EFB3A /* Shop */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		54251F962E671C5E000EFB3A /* Shop */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				5478BEF82E740E9400DC8361 /* Exceptions for "Shop" folder in "Shop" target */,
+			);
 			path = Shop;
 			sourceTree = "<group>";
 		};
@@ -43,6 +56,16 @@
 		54251FAE2E671C60000EFB3A /* ShopUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = ShopUITests;
+			sourceTree = "<group>";
+		};
+		5478BECB2E73FB8700DC8361 /* GoodsView */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = GoodsView;
+			sourceTree = "<group>";
+		};
+		5478BED52E73FEE500DC8361 /* UI */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -79,6 +102,8 @@
 				54251FA42E671C60000EFB3A /* ShopTests */,
 				54251FAE2E671C60000EFB3A /* ShopUITests */,
 				54251F952E671C5E000EFB3A /* Products */,
+				5478BECB2E73FB8700DC8361 /* GoodsView */,
+				5478BED52E73FEE500DC8361 /* UI */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +134,8 @@
 			);
 			fileSystemSynchronizedGroups = (
 				54251F962E671C5E000EFB3A /* Shop */,
+				5478BECB2E73FB8700DC8361 /* GoodsView */,
+				5478BED52E73FEE500DC8361 /* UI */,
 			);
 			name = Shop;
 			packageProductDependencies = (
