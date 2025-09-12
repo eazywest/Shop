@@ -14,9 +14,9 @@ struct RegistrationView: View {
                     Button {
                         dismiss()
                     } label: {
-                        Image(systemName: "arrow.backward")
+                        Image("Arrow")
                             .resizable()
-                            .frame(width: 20, height: 20)
+                            .frame(width: 24, height: 24)
                             .foregroundColor(.black)
                       
                           
