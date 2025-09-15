@@ -3,17 +3,17 @@ import SwiftUI
 struct ReviewsSection: View {
     var body: some View {
         VStack(alignment: .leading) {
-            Text("ќтзывы")
+            Text("Отзывы")
                 .font(.headline)
                 .padding(.bottom, 4)
 
-            ReviewItem(author: "Chloe M.", review: "ќтличное платье, идеально сидит.", rating: 5, likes: 10, dislikes: 2)
-            ReviewItem(author: "Isabella R.", review: "’орошее платье, но немного просвечивает.", rating: 4, likes: 5, dislikes: 1)
+            ReviewItem(author: "Chloe M.", review: "Отличное платье, идеально сидит.", rating: 5, likes: 10, dislikes: 2)
+            ReviewItem(author: "Isabella R.", review: "Хорошее платье, но немного просвечивает.", rating: 4, likes: 5, dislikes: 1)
 
             Button(action: {
-                print("ѕосмотреть все отзывы")
+                print("Посмотреть все отзывы")
             }) {
-                Text("—мотреть все отзывы")
+                Text("Посмотреть все отзывы")
                     .foregroundColor(.blue)
             }
             .padding(.top, 8)

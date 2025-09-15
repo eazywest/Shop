@@ -29,6 +29,6 @@ struct ExpandableTextView: View {
 
 struct ExpandableTextView_Previews: PreviewProvider {
     static var previews: some View {
-        ExpandableTextView(title: "ќписание", content: "ќчень длинное описание товара")
+        ExpandableTextView(title: "Описание", content: "очень длинное описание товара")
     }
 }

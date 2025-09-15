@@ -5,21 +5,21 @@ struct CategoryButtons: View {
 
     var body: some View {
         ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 8) {
+            HStack(spacing: 10) {
                 ForEach(categories, id: \.self) { category in
                     Button(action: {
                         print("Выбрана категория: \(category)")
                     }) {
                         Text(category)
-                            .padding(.horizontal, 12)
+                            .font(.lexend(size: 14, weight: .medium))
+                            .padding(.horizontal, 16)
                             .padding(.vertical, 8)
                             .background(Color(.systemGray6))
                             .foregroundColor(.black)
-                            .cornerRadius(20)
+                            .cornerRadius(12)
                     }
                 }
             }
-            
             .padding(.horizontal)
         }
     }

@@ -4,32 +4,59 @@ import SwiftUI
 struct ProductDetailView: View {
     @State private var selectedColor: Color = .black
     @State private var selectedSize: String = "M"
-    @State private var quantity: Int = 1
+    @State private var quantity: Int = 0
 
-    let product: Product  //  ѕринимаем продукт в качестве параметра
+    let product: Product
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                //  »зображение продукта
-                Image("Snikers")  //  «амените "dress_image" на ваше изображение
+                HStack{
+                    Button {
+                        //
+                    } label: {
+                        Image("Arrow")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.black)
+                      
+                    }
+                    Spacer()
+                    
+                    Button {
+                        //
+                    } label: {
+                        Image("Tabback")
+                            .resizable()
+                            .frame(width: 24, height: 24)
+                            .foregroundColor(.black)
+                            .padding()
+                    }
+                    
+                    
+                }
+                Image("dress")
                     .resizable()
                     .scaledToFill()
-                    .frame(width: 358, height: 250) // ѕримерна€ высота
+                    .frame(height: 330)
+                    .frame(maxWidth: .infinity)
                     .clipped()
+                    .padding(.horizontal, -16)
+                    .padding(.top, -10)
+                
 
-                //  Ќазвание и цена
+              
                 Text(product.name)
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .font(.lexend(size: 22, weight: .bold))
+                   
 
                 Text(product.price)
-                    .font(.headline)
+                    .font(.lexend(size: 16, weight: .regular))
 
-                //   нопка " упить" /  онтроллер количества
+                
                 HStack {
                     if quantity == 0 {
-                        CustomButton(text: " упить", action: {
+                        CustomButton(text: " Купить", action: {
                             quantity = 1
                         })
                     } else {
@@ -38,28 +65,28 @@ struct ProductDetailView: View {
                     Spacer()
                 }
 
-                //  ÷вет
-                Text("÷вет")
+              
+                Text("Цвет")
                     .font(.headline)
                     .padding(.top, 8)
                 ColorSelectionView(selectedColor: $selectedColor)
 
-                //  –азмер
-                Text("–азмер")
+             
+                Text("Размер")
                     .font(.headline)
                     .padding(.top, 8)
                 SizeSelectionView(selectedSize: $selectedSize)
 
-                //  ќписание
-                ExpandableTextView(title: "ќписание", content: "ќписание товара. «десь будет подробное описание характеристик и преимуществ.")
+              
+                ExpandableTextView(title: "Описание", content: "Описание товара. «Здесь будет подробное описание характеристик и преимуществ.")
 
-                //  ’арактеристики
-                ExpandableTextView(title: "’арактеристики", content: "–азличные характеристики товара (состав, размеры, особенности ухода и т.д.)")
+              
+                ExpandableTextView(title: "Характеристики", content: "Различные характеристики товара (состав, размеры, особенности ухода и т.д.)")
 
-                //  ƒоставка и возврат
-                ExpandableTextView(title: "ƒоставка и возврат", content: "»нформаци€ об услови€х доставки и возможности возврата товара.")
+              
+                ExpandableTextView(title: "Доставка и возврат", content: "Информация об условиях доставки и возможности возврата товара.")
 
-                //  ќтзывы
+            
                 ReviewsSection()
 
             }
@@ -70,6 +97,6 @@ struct ProductDetailView: View {
 
 struct ProductDetailView_Previews: PreviewProvider {
     static var previews: some View {
-        ProductDetailView(product: Product(name: "ѕлатье с принтом", imageName: "dress1", price: "1 999 ?")) // ѕример товара
+        ProductDetailView(product: Product(name: "Платье с принтом", imageName: "dress1", price: "1 999 ₽")) 
     }
 }

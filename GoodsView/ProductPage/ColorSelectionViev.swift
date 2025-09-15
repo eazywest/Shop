@@ -13,7 +13,11 @@ struct ColorSelectionView: View {
                     .frame(width: 30, height: 30)
                     .overlay(
                         Circle()
-                            .strokeBorder(selectedColor == color ? Color.blue : Color.clear, lineWidth: 2)  //  ¬ыдел€ем выбранный цвет
+                            .strokeBorder(
+                                selectedColor == color ? Color(red: 245/255, green: 245/255, blue: 245/255) : Color.clear,
+                                lineWidth: 2 
+                            )
+                        
                     )
                     .onTapGesture {
                         selectedColor = color

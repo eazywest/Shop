@@ -18,19 +18,22 @@ struct ProductCard: View {
 
             HStack(alignment: .bottom) {
                 VStack(alignment: .leading) {
-                    Text("Характеристики товара")
-                        .font(.subheadline)
+                    Text("★ 4.5 (1.2) Черный")
+                        .font(.lexend(size: 16, weight: .regular))
                         .foregroundColor(.gray)
                         .lineLimit(1)
                     Text(product.price)
-                        .font(.headline)
+                        .font(.lexend(size: 16, weight: .regular))
+                        .foregroundColor(.gray)
+                        .padding(.top, 10)
+                     
                 }
                 Spacer()
                 Button(action: {
                     print("Товар добавлен в корзину")
                 }) {
                     Text(" Купить")
-                        .font(.system(size: 12))
+                        .font(.lexend(size: 14, weight: .medium))
                         .foregroundColor(.white)
                         .padding(.horizontal, 10)
                         .padding(.vertical, 5)
@@ -43,7 +46,7 @@ struct ProductCard: View {
 
         }
         .frame(width: 358, height: 312)
-        .padding()
+        .padding(.bottom, 10)
         .background(Color.white)
         .cornerRadius(10)
     }
