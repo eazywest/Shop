@@ -5,8 +5,14 @@ struct CustomTabBar: View {
         ZStack {
             
             RoundedRectangle(cornerRadius: 0)
-                .fill(Color.white)
-                .frame(width: 390, height: 75)
+                .fill(Color.white) 
+                .overlay(
+                    Rectangle()
+                        .frame(height: 1)
+                        .foregroundColor(Color(red: 237/255, green: 237/255, blue: 237/255)),
+                    alignment: .top
+                )
+                .frame(width: 400, height: 75)
 
             HStack {
                 TabBarButton(imageName: "House", text: "Главное")

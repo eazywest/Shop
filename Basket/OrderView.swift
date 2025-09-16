@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct OrderView: View {
-    let cartItems: [CartItem] // Передаем данные из корзины
+    let cartItems: [CartItem]
 
     @State private var selectedPaymentMethod: PaymentMethod = .creditCard
 
@@ -30,7 +30,7 @@ struct OrderView: View {
 
             ScrollView {
                 VStack(alignment: .leading, spacing: 16) {
-                    // Список товаров
+                   
                     ForEach(cartItems) { item in
                         HStack {
                             Image(item.imageName) 
@@ -42,30 +42,34 @@ struct OrderView: View {
                         }
                     }
 
-                    // Итого
+                 
                     VStack(alignment: .leading) {
                         Text("Итого")
                             .font(.title3)
                             .fontWeight(.bold)
+                            .padding(.top, 10)
 
                         HStack {
                             Text("Товары")
                             Spacer()
                             Text("\(String(format: "%.2f", subtotal)) руб.")
+                                .padding(.top, 10)
                         }
 
                         HStack {
                             Text("Доставка")
                             Spacer()
-                            Text("500 руб.") // Заглушка
+                            Text("500 руб.")
+                                .padding(.top, 10)
                         }
 
                         Text("Стоимость доставки рассчитывается исходя из веса и адреса доставки.")
                             .font(.footnote)
                             .foregroundColor(.gray)
+                            .padding(.top, 10)
                     }
 
-                    // Способ оплаты
+                  
                     VStack(alignment: .leading) {
                         Text("Способ оплаты")
                             .font(.title3)
@@ -79,23 +83,30 @@ struct OrderView: View {
                             selectedPaymentMethod = .applePay
                         }
                     }
+                   
                 }
                 .padding()
+                
             }
-
-            // Кнопка "Оплатить"
-            Button("Оплатить") {
-                // Логика оплаты
-                print("Оплатить заказ")
+            VStack(spacing: 1){
+                Button("Оплатить") {
+                    
+                    print("Оплатить заказ")
+                }
+                .foregroundColor(.white)
+                .padding()
+                .frame(width: 358, height: 48)
+                .background(Color.black)
+                .cornerRadius(10)
+                CustomTabBar()
+                    .padding(.bottom, -20)
+                
             }
-            .foregroundColor(.white)
-            .padding()
-            .frame(width: 358, height: 48)
-            .background(Color.black)
-            .cornerRadius(10)
-            .padding(.bottom)
         }
-        .background(Color(.systemGray6))
+        
+       
+        .background(Color.white.opacity(0.7))
+                
     }
 }
 

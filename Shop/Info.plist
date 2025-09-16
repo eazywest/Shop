@@ -4,10 +4,9 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
-		<string>Lexend-Bold.ttf</string>
-		<string>Lexend-Medium.ttf</string>
-		<string>Lexend-Regular.ttf</string>
-		<string>Lexend-SemiBold.ttf</string>
+		<string></string>
 	</array>
+	<key>item 1</key>
+	<string>Lexend-Bold.ttf</string>
 </dict>
 </plist>

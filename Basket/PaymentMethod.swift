@@ -18,7 +18,7 @@ struct PaymentMethodView: View {
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
             }
             .padding()
-            .background(Color.white)
+            .background(Color.white.opacity(0.7))
             .cornerRadius(10)
         }
         .foregroundColor(.black)

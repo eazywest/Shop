@@ -6,10 +6,10 @@ struct CartItemView: View {
 
     var body: some View {
         HStack {
-            Image(cartItem.imageName) // Замените "product_image" на ваше изображение
+            Image(cartItem.imageName)
                 .resizable()
                 .scaledToFit()
-                .frame(width: 80, height: 80)
+                .frame(width: 56, height: 56)
 
             VStack(alignment: .leading) {
                 Text(cartItem.productName)
@@ -22,7 +22,7 @@ struct CartItemView: View {
 
             HStack {
                 Button(action: {
-                    // Уменьшить количество
+                   
                 }) {
                     Image(systemName: "minus")
                         .padding(4)
@@ -34,36 +34,29 @@ struct CartItemView: View {
                     .font(.headline)
 
                 Button(action: {
-                    // Увеличить количество
+                
                 }) {
                     Image(systemName: "plus")
                         .padding(4)
-                        .background(Color.gray.opacity(0.3))
+                        .background(Color.white.opacity(0.7))
                         .clipShape(Circle())
                 }
             }
         }
-        .padding()
+        .padding(.horizontal)
         .background(Color.white)
         .cornerRadius(10)
         .overlay(
             alignment: .topTrailing
         ) {
-            Button {
-                onDelete()
-            } label: {
-                Image(systemName: "xmark.circle.fill")
-                    .symbolRenderingMode(.palette)
-                    .foregroundStyle(.white, .red)
-                    .font(.system(size: 20))
-            }
-            .offset(x: 10, y: -10)
+           
+            
         }
     }
 }
 
 struct CartItemView_Previews: PreviewProvider {
     static var previews: some View {
-        CartItemView(cartItem: CartItem(productName: "Шелковая блузка", price: "10 920,00 ₽", size: "M", quantity: 1, imageName: "product_image"), onDelete: {})
+        CartItemView(cartItem: CartItem(productName: "Шелковая блузка", price: "10 920,00 ₽", size: "M", quantity: 1, imageName: "Hands"), onDelete: {})
     }
 }

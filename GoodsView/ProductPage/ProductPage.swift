@@ -39,7 +39,7 @@ struct ProductDetailView: View {
                     .resizable()
                     .scaledToFill()
                     .frame(height: 330)
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity) // ← замените на это
                     .clipped()
                     .padding(.horizontal, -16)
                     .padding(.top, -10)
@@ -60,6 +60,10 @@ struct ProductDetailView: View {
                             quantity = 1
                         })
                     } else {
+                        Button("В корзине"){
+                            
+                            
+                        }
                         QuantityControl(quantity: $quantity)
                     }
                     Spacer()

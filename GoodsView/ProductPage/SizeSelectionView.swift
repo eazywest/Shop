@@ -8,7 +8,7 @@ struct SizeSelectionView: View {
         HStack {
             ForEach(sizes, id: \.self) { size in
                 Text(size)
-                    .font(.system(size: 16))
+                    .font(.lexend(size: 14, weight: .medium))
                     .fontWeight(selectedSize == size ? .bold : .regular)
                     .foregroundColor(selectedSize == size ? .black : .gray)
                     .padding(.horizontal, 12)

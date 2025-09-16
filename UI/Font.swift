@@ -3,6 +3,7 @@ import SwiftUI
 extension Font {
     static func lexend(size: CGFloat, weight: Font.Weight = .regular) -> Font {
         let fontName: String
+        
         switch weight {
         case .bold:
             fontName = "Lexend-Bold"
@@ -12,9 +13,18 @@ extension Font {
             fontName = "Lexend-SemiBold"
         case .light:
             fontName = "Lexend-Light"
-        default:
+        case .regular:
             fontName = "Lexend-Regular"
+        default:
+            fontName = "Lexend-Regular" // fallback
         }
-        return Font.custom(fontName, size: size)
+        
+        
+        if UIFont(name: fontName, size: size) != nil {
+            return Font.custom(fontName, size: size)
+        } else {
+            print("Шрифт \(fontName) не найден! Используется системный шрифт.")
+            return Font.system(size: size, weight: weight)
+        }
     }
 }

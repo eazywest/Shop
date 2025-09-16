@@ -3,37 +3,38 @@ import SwiftUI
 struct ProfileView: View {
     var body: some View {
         VStack {
-            // Аватар и информация о пользователе
+            
             VStack(alignment: .center) {
-                Image("profile_image")  // Замените "profile_image" на ваше изображение
+                Image("Aleksandra")
                     .resizable()
                     .scaledToFit()
                     .frame(width: 100, height: 100)
                     .clipShape(Circle())
+                    .padding(.bottom, 10)
 
-                Text("Александра")  // Имя пользователя (можно сделать @State)
-                    .font(.title2)
-                    .fontWeight(.bold)
+                Text("Александра")
+                    .font(.lexend(size: 22, weight: .bold))
 
-                Text("alexandra.k@email.com")  // Email пользователя (можно сделать @State)
-                    .font(.subheadline)
-                    .foregroundColor(.gray)
+                Text("alexandra.k@email.com")
+                    .font(.lexend(size: 16, weight: .bold))
+                    .foregroundColor(Color(red: 117/255, green: 117/255, blue: 117/255))
+                        .tint(Color(red: 117/255, green: 117/255, blue: 117/255))
             }
             .padding(.top)
 
-            // Список опций профиля
-            VStack(alignment: .leading) {
-                ProfileOption(title: "Мои заказы", icon: "truck.box.truck", destination: AnyView(MyOrdersView()))
-                ProfileOption(title: "Помощь", icon: "questionmark.circle", destination: AnyView(HelpView()))
-                ProfileOption(title: "Выйти", icon: "arrow.left.square", destination: AnyView(EmptyView())) //заглушка
+          
+            VStack(spacing: 3) {
+                ProfileOption(title: "Мои заказы", icon: "Track", destination: AnyView(MyOrdersView()))
+                ProfileOption(title: "Помощь", icon: "Help", destination: AnyView(HelpView()))
+                ProfileOption(title: "Выйти", icon: "ArrowForProfile", destination: AnyView(EmptyView()))
             }
-            .padding(.top, 20)
-            .padding(.horizontal)
+            .padding(.top, 15)
+            .padding(.leading, 10)
 
             Spacer()
-            CustomTabBar()
+            CustomTabBar()	
         }
-        .background(Color(.systemGray6))
+        .background(Color.white.opacity(0.7))
         .edgesIgnoringSafeArea(.bottom)
     }
 }
